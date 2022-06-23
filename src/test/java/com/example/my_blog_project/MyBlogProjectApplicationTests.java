@@ -1,10 +1,10 @@
-package com.example.tencoblog_1;
+package com.example.my_blog_project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JpaBasicCrudApplicationTests {
+class MyBlogProjectApplicationTests {
 
 	@Test
 	void contextLoads() {

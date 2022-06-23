@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.example.my_blog_project.dto.BoardRequestDto;
+import com.example.my_blog_project.dto.BoardSaveRequestDto;
 import com.example.my_blog_project.model.Board;
 import com.example.my_blog_project.service.BoardService;
 
@@ -24,7 +24,7 @@ public class BoardController {
 	
 	@PostMapping("/savePost")
 	@ResponseBody
-	public String savePost(@RequestBody BoardRequestDto board) {
+	public String savePost(@RequestBody BoardSaveRequestDto board) {
 		boardService.savePost(board);
 		return "ok";
 	}

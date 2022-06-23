@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.my_blog_project.dto.BoardRequestDto;
+import com.example.my_blog_project.dto.BoardSaveRequestDto;
 import com.example.my_blog_project.model.Board;
 import com.example.my_blog_project.repository.BoardRepository;
 
@@ -15,8 +15,8 @@ public class BoardService {
 	private BoardRepository boardRepository;
 
 	@Transactional
-	public void savePost(BoardRequestDto dto) {
-		Board boardEntity = BoardRequestDto.toEntity(dto);
+	public void savePost(BoardSaveRequestDto dto) {
+		Board boardEntity = BoardSaveRequestDto.toEntity(dto);
 		boardRepository.save(boardEntity);
 	}
 
