@@ -25,27 +25,21 @@
 <div class="container" style="margin-top:30px">
   <div class="row">
     <div class="col-sm-4">
-      <h2>About Me</h2>
-      <h5>Photo of me:</h5>
-      <div class="fakeimg">Fake Image</div>
+      <h3>About Me</h3>
+      <br/>
+      <img class="img-fluid" src="profile.png" alt="Chania" width="300" height="300">
       <p>preview text</p>
       <hr class="d-sm-none">
     </div>
+    
     <div class="col-sm-8">
-      <h2>TITLE</h2>
-      <h5>Date</h5>
+    <c:forEach var="board" items="${boards.content}">
+      <h2>${board.title}</h2>
+      <h5>${board.createDate}</h5>
       <div class="fakeimg">Fake Image</div>
-      <p>preview text</p>
-      <br>
-      <h2>TITLE</h2>
-      <h5>Date</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>preview text</p>
-      <br>
-      <h2>TITLE</h2>
-      <h5>Date</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>preview text</p>
+      <br/>
+      <br/>
+    </c:forEach>
     </div>
   </div>
 </div>

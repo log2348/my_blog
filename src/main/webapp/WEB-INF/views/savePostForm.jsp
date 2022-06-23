@@ -14,46 +14,9 @@
 			<textarea class="form-control summernote" rows="5" id="content"></textarea>
 		</div>		
 		
-		<button type="button" onclick="savePost()" class="btn btn-primary">Save</button>
+		<button type="button" id="btn-save" class="btn btn-primary">Save</button>
 	</form>
 </div>
-    <script>
-    
-    function savePost() {
-    	let title = document.querySelector("#title").value;
-    	let content = document.querySelector("#content").value;
-    	//let userId = document.querySelector('#userId').value;
-    	
-    	let board = {
-    		title: title,
-    		content: content
-    	}
-    	
-    fetch("/myblog/savePost", {
-    	method: "post",
-    	headers: {
-    		'content-type': 'application/json; charset=utf-8'
-    	},
-    	body: JSON.stringify(board)
-    })
-    .then(res => res.text())
-    .then(res => {
-    	if(res == "ok") {
-    		alert("글쓰기 성공");
-    		location.href = "/myblog";
-    	} else {
-    		alert("글쓰기 실패");
-    	}
-    });  
-    
-    } // end of savePost    
-    
-      $('.summernote').summernote({
-        placeholder: 'Write Here',
-        tabsize: 2,
-        height: 400
-      });
-    </script>
-  </body>
 
+<script src="/myblog/js/board.js"></script>
 <%@ include file="layout/footer.jsp" %>
