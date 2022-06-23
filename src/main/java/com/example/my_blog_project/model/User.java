@@ -1,5 +1,7 @@
 package com.example.my_blog_project.model;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -7,6 +9,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,6 +34,9 @@ public class User {
 	
 	@Column(length = 30, nullable = false)
 	private String email;
+	
+	@CreationTimestamp
+	private Timestamp createDate;
 	
 	@Enumerated(EnumType.STRING)
 	private RoleType roleType;

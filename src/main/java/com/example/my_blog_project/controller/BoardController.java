@@ -22,6 +22,12 @@ public class BoardController {
 		return "home";
 	}
 	
+	// 글쓰기 화면 이동
+	@GetMapping("/savePostForm")
+	public String savePostForm() {
+		return "savePostForm";
+	}
+	
 	@PostMapping("/savePost")
 	@ResponseBody
 	public String savePost(@RequestBody BoardSaveRequestDto board) {
@@ -32,10 +38,8 @@ public class BoardController {
 	// 작성 글 상세 보기
 	@GetMapping("/detailPost")
 	public String detailPost(int id) {
-		return "detail_post";
+		return "detailPostForm";
 	}
-	
-	//
 	
 	// 글 수정 페이지 호출
 	@GetMapping("/update_post_form")

@@ -9,6 +9,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- include summernote css/js -->
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 </head>
 <body>
 
@@ -25,19 +28,19 @@
 <c:choose>
 	<c:when test="${empty sessionScope.principal}">
     <li class="nav-item">
-      <a class="nav-link" href="/myblog/user/login_form">LOGIN</a>
+      <a class="nav-link" href="/myblog/user/loginForm">LOGIN</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/myblog/user/join_form">JOIN</a>
+      <a class="nav-link" href="/myblog/user/joinForm">JOIN</a>
     </li>
 	
 	</c:when>
 	<c:otherwise>
 	    <li class="nav-item">
-      <a class="nav-link" href="/myblog/user/write_post_form">BOARD</a>
+      <a class="nav-link" href="/myblog/savePostForm">BOARD</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/myblog/user/join_form">LOGOUT</a>
+      <a class="nav-link" href="/myblog/user/logout">LOGOUT</a>
     </li>
 	
 	</c:otherwise>
