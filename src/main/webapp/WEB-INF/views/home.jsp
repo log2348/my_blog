@@ -25,18 +25,24 @@
 <div class="container" style="margin-top:30px">
   <div class="row">
     <div class="col-sm-4">
-      <h3>About Me</h3>
+      <h3>JiHyeon Park</h3>
       <br/>
       <img class="img-fluid" src="profile.png" alt="Chania" width="300" height="300">
-      <p>preview text</p>
+      <p>Introduce myself</p>
       <hr class="d-sm-none">
     </div>
     
     <div class="col-sm-8">
     <c:forEach var="board" items="${boards.content}">
-      <h2>${board.title}</h2>
-      <h5>${board.createDate}</h5>
+      <h3>${board.title}</h3>
+       <hr/>
+      <h6>${board.createDate}</h6>
+      <div class="text-right">
+      <a type="button" class="btn btn-outline-secondary" href="/myblog/showDetail/${board.id}">Detail</a>
+      </div>
+      <br/>
       <div class="fakeimg">Fake Image</div>
+      <h7 type="text" row = 2>${board.content}</h7>
       <br/>
       <br/>
     </c:forEach>

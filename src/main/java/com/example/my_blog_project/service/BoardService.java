@@ -22,7 +22,14 @@ public class BoardService {
 		boardRepository.save(boardEntity);
 	}
 
+	// 메인 화면 글 목록
 	public Page<Board> showPostList(Pageable pageable) {
 		return boardRepository.findAll(pageable);
+	}
+	
+	public Board showDetailPost(int id) {
+		Board board = boardRepository.findById(id).get();
+		board.setReadCount(board.getReadCount() + 1);
+		return board;
 	}
 }

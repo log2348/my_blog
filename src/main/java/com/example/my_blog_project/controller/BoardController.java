@@ -8,7 +8,9 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -46,13 +48,14 @@ public class BoardController {
 	}	
 	
 	// 작성 글 상세 보기
-	@GetMapping("/detailPost")
-	public String detailPost(int id) {
+	@GetMapping("/showDetail/{id}")
+	public String detailPost(@PathVariable int id, Model model) {
+		model.addAttribute("board", boardService.showDetailPost(id));
 		return "detailPostForm";
 	}
 	
-	// 글 수정 페이지 호출
-	@GetMapping("/update_post_form")
+	// 글 수정
+	@PutMapping("/board/{id}")
 	public String updateForm() {
 		return "update_post_form";
 	}

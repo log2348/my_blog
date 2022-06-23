@@ -21,7 +21,7 @@
 </div>
 
 <nav class="navbar navbar-expand-sm bg-light navbar-light">
-  <ul class="navbar-nav">
+  <ul class="nav nav-tabs">
     <li class="nav-item active">
       <a class="nav-link" href="/myblog">BLOG</a>
     </li>
@@ -45,6 +45,7 @@
 	
 	</c:otherwise>
 </c:choose>
+
   </ul>
 </nav>
 
