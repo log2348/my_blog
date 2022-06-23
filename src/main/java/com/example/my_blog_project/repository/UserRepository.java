@@ -1,8 +1,8 @@
-package com.example.my_blog_re.repository;
+package com.example.my_blog_project.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.my_blog_re.model.User;
+import com.example.my_blog_project.model.User;
 
 public interface UserRepository extends JpaRepository<User, Integer>{
 	

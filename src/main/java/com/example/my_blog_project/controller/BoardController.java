@@ -1,4 +1,4 @@
-package com.example.my_blog_re.controller;
+package com.example.my_blog_project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.example.my_blog_re.dto.BoardRequestDto;
-import com.example.my_blog_re.model.Board;
-import com.example.my_blog_re.service.BoardService;
+import com.example.my_blog_project.dto.BoardRequestDto;
+import com.example.my_blog_project.model.Board;
+import com.example.my_blog_project.service.BoardService;
 
 @Controller
 public class BoardController {

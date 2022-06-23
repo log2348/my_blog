@@ -1,11 +1,11 @@
-package com.example.my_blog_re.service;
+package com.example.my_blog_project.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.my_blog_re.model.User;
-import com.example.my_blog_re.repository.UserRepository;
+import com.example.my_blog_project.model.User;
+import com.example.my_blog_project.repository.UserRepository;
 
 @Service
 public class UserService {

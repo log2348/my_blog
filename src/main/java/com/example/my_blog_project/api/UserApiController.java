@@ -1,4 +1,4 @@
-package com.example.my_blog_re.api;
+package com.example.my_blog_project.api;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.my_blog_re.dto.ResponseDto;
-import com.example.my_blog_re.model.RoleType;
-import com.example.my_blog_re.model.User;
-import com.example.my_blog_re.service.UserService;
+import com.example.my_blog_project.dto.ResponseDto;
+import com.example.my_blog_project.model.RoleType;
+import com.example.my_blog_project.model.User;
+import com.example.my_blog_project.service.UserService;
 
 @RestController
 @RequestMapping("/api/user")

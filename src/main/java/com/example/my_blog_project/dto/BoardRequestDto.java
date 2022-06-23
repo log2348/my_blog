@@ -1,6 +1,6 @@
-package com.example.my_blog_re.dto;
+package com.example.my_blog_project.dto;
 
-import com.example.my_blog_re.model.Board;
+import com.example.my_blog_project.model.Board;
 
 import lombok.Data;
 

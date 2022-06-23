@@ -1,4 +1,4 @@
-package com.example.my_blog_re.model;
+package com.example.my_blog_project.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
