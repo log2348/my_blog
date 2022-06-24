@@ -30,7 +30,7 @@ public class BoardController {
 	public String list(@PageableDefault(size = 3, sort = "id", direction = Direction.DESC) Pageable pageable,
 			Model model) {
 		Page<Board> boards = boardService.showPostList(pageable);
-		model.addAttribute("boards", boardService.showPostList(pageable));
+		model.addAttribute("boards", boards);
 		return "home";
 	}
 	
