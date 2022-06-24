@@ -5,18 +5,20 @@
 	<form>
 	</br>
 		<div class="form-group">
-			<label for="title">Title  :  </label>
-			<input type="text" placeholder="title" id="title" class="form-control">
+			<h6>Title  :  </h6>
+			<input type="text" placeholder="Title here.." id="title" class="form-control">
 		</div>
 
 		<div class="form-group">
-			<label for="title">Content  :  </label>
+			<h6>Content  :  </h6>
 			<textarea class="form-control summernote" rows="5" id="content"></textarea>
 		</div>		
 		
-		<button type="button" id="btn-save" class="btn btn-primary">Save</button>
+		<button type="button" id="btn-save" style="float:right" class="btn btn-primary">Save</button>
 	</form>
 </div>
+<br/>
+<br/>
 
 <script src="/myblog/js/board.js"></script>
 <%@ include file="layout/footer.jsp" %>

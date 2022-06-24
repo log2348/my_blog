@@ -27,7 +27,9 @@ public class UserService {
 
 	@Transactional(readOnly = true)
 	public User login(User user){
-		User loginUser = userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
+		User loginUser = userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword()).orElseThrow(() -> {
+			return new RuntimeException("존재하지 않는 사용자입니다.");
+		});
 		return loginUser;
 	}
 

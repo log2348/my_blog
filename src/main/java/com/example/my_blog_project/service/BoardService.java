@@ -23,13 +23,34 @@ public class BoardService {
 	}
 
 	// 메인 화면 글 목록
+	@Transactional
 	public Page<Board> showPostList(Pageable pageable) {
 		return boardRepository.findAll(pageable);
 	}
 	
+	// 글 상세 보기
+	@Transactional
 	public Board showDetailPost(int id) {
-		Board board = boardRepository.findById(id).get();
+		Board board = boardRepository.findById(id).orElseThrow(() -> {
+			return new RuntimeException("존재하지 않는 글입니다.");
+		});
+		
 		board.setReadCount(board.getReadCount() + 1);
 		return board;
+	}
+	
+	@Transactional
+	public void updatePost(int id, BoardSaveRequestDto dto) {
+		Board boardEntity = boardRepository.mFindById(id).orElseThrow(() -> {
+			return new RuntimeException("존재하지 않는 글입니다.");
+		});
+		
+		boardEntity.setTitle(dto.getTitle());
+		boardEntity.setContent(dto.getContent());
+	}
+	
+	@Transactional
+	public int deletePost(int id) {
+		return boardRepository.mDeleteById(id);
 	}
 }

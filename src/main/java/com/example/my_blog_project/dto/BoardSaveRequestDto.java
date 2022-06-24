@@ -10,11 +10,16 @@ public class BoardSaveRequestDto {
 	private String content;
 
 	public static Board toEntity(BoardSaveRequestDto dto) {
+		
 		Board boardEntity = Board.builder()
 				.title(dto.getTitle())
 				.content(dto.getContent())
 				.build();
 		return boardEntity;
 	}
-
+	
+	public void test(){
+		
+		
+	}
 }

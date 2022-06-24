@@ -7,6 +7,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -54,10 +55,27 @@ public class BoardController {
 		return "detailPostForm";
 	}
 	
-	// 글 수정
-	@PutMapping("/board/{id}")
-	public String updateForm() {
-		return "update_post_form";
+	// 수정할 글 불러오기
+	@GetMapping("/updatePostForm/{id}")
+	public String updatePostForm(@PathVariable int id, Model model) {
+		Board board = boardService.showDetailPost(id);
+		model.addAttribute("board", board);
+		return "updatePostForm";
+	}
+	
+	// 글 수정 동작
+	@PutMapping("/updatePost/{id}")
+	@ResponseBody
+	public String updatePost(@PathVariable int id, @RequestBody BoardSaveRequestDto dto) {
+		boardService.updatePost(id, dto);
+		return "ok";
+	}
+	
+	@DeleteMapping("/deletePost/{id}")
+	@ResponseBody
+	public int deletePost(@PathVariable int id) {
+		int result = boardService.deletePost(id);
+		return result;
 	}
 
 }
