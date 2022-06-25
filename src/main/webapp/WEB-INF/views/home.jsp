@@ -43,12 +43,13 @@
           <h3>${board.title}</h3>
           <hr />
           <h6 id="date" style="float: left">Date : ${board.createDate}</h6>
-          <a type="button" class="btn btn-secondary" href="/myblog/showDetail/${board.id}" style="float: right">Detail</a>
+          <a type="button" class="btn btn-secondary" href="/myblog/showDetail/${board.id}" style="float: right">DETAIL</a>
           <br />
           <br />
           <div class="fakeimg">Preview Image..</div>
           <h7 type="text" class="multiLine">${board.content}</h7>
           <br />
+          <br/>
         </c:forEach>
         <ul class="pagination">
           <c:choose>
@@ -72,9 +73,6 @@
       </div>
     </div>
   </div>
-
-  <br />
-  <br />
 </div>
 <br />
 

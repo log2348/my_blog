@@ -32,7 +32,7 @@ public class BoardService {
 	@Transactional
 	public Board showDetailPost(int id) {
 		Board board = boardRepository.findById(id).orElseThrow(() -> {
-			return new RuntimeException("존재하지 않는 글입니다.");
+			return new IllegalArgumentException("존재하지 않는 글입니다.");
 		});
 		
 		board.setReadCount(board.getReadCount() + 1);

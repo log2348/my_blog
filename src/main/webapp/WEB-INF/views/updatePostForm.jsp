@@ -14,7 +14,7 @@
 			<textarea class="form-control summernote" rows="5" id="content">${board.content}</textarea>
 		</div>		
 		<input type="hidden" id="board-id" value="${board.id}">
-		<button type="button" id="btn-ok-update" class="btn btn-primary">Update</button>
+		<button type="button" id="btn-ok-update" class="btn btn-primary">MODIFY</button>
 	</form>
 </div>
 		<br/>
